@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/5b5fa05dbf.js"></script>
+</head>
+<body>
+    <!-- Nombre empresa
+    correo
+    Localidad
+    Código CNAE de 2009 de su actividad principal:
+    Cifra de negocio de su último ejercicio:
+    Valor a precio de coste de los productos y servicios vendidos:
+    Total de costes operativos (total compras bienes y servicios excepto personal y los financieros):
+    Nº de personas ocupadas en su negocio:
+    Total gastos de personal:
+    Datos del ejercicio
+    CIF/NIF -->
+    
+<div class="container">
+    <div class="card">
+        <div class="jumbotron">
+            <h1 style="text-align: center;">INTRODUCIR PREGUNTAS</h1>
+        </div>
+        <form th:object="${empresa}" method="POST" th:action="@{/subir}" id="emailForm" class="container">
+            <div class="form-group">
+                <label>Nombre empresa</label>
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon"><i class="fa fa-fw fa-user" aria-hidden="true"></i></div>
+                    <input th:field="${empresa.nomEmpresa}" id= "name" placeholder="Nombre" type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Correo</label>
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">@</div>
+                    <input th:field="${empresa.email}" id="mail" placeholder="Correo electrónico" type="text" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Localidad</label>
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">L</i></div>
+                    <input th:field="${empresa.codPostal}" id="localidad" placeholder="Localidad" type="text" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Código CNAE de 2009 de su actividad principal:</label>
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">C</div>
+                    <input th:field="${empresa.codCNAE}" id="cnae" placeholder="Código CNAE" type="text" class="form-control"   />
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Cifra de negocio de su último ejercicio:</label>
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">N</i></div>
+                    <input th:field="${empresa.CifraNegocio}" id="cifranegocio" placeholder="Cifra de negocio" type="text" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Valor a precio de coste de los productos y servicios vendidos:</label>
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">V</div>
+                    <input th:field="${empresa.ValorPrecioCosteProductosServiciosVendidos}" id="valorcoste" placeholder="Valor productos y servicios vendidos" type="text" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Total de costes operativos (total compras bienes y servicios excepto personal y los financieros):</label>
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">T</div>
+                    <input th:field="${empresa.ComprasBienesServicios}" id="totalcostes" placeholder="Total de costes" type="text" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Nº de personas ocupadas en su negocio:</label>
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">P</div>
+                    <input th:field="${empresa.MediaPaxOcupadasEmpresa}" id="paxocupadas" placeholder="Nº de personas" type="text" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Total gastos de personal:</label>
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">G</div>
+                    <input  th:field="${empresa.GastosPersonal}" id="totalgastospax" placeholder="Total gastos" type="text" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Datos del ejercicio</label>
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">Ñ</div>
+                    <input id="ejercicio" placeholder="ejercicio" type="text" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>CIF/NIF</label>
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">F</div>
+                    <input th:field="${empresa.CIF}" id="cif" placeholder="CIF/NIF" type="text" class="form-control"/>
+                </div>
+            </div>
+            <div style="margin-bottom: 10px">
+                <button type="submit" class="btn btn-success">Enviar</button>
+                <!--<button onclick="window.location.href='http://localhost:8080/subir'">Continue</button>-->
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
