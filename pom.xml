@@ -6,8 +6,8 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.5.4</version>
-		<relativePath>jar</relativePath>
-		<!--<relativePath/>  ../pom.xml</relativePath> lookup parent from repository -->
+<!-- 		<relativePath>jar</relativePath> -->
+		<relativePath/>  <!--../pom.xml</relativePath> lookup parent from repository -->
 	</parent>
 	
 	<groupId>com.justaproject</groupId>
@@ -16,7 +16,7 @@
 	<name>BenchMark</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -90,6 +90,20 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+		<!-- añadir este plugin para evitar el problema con la versión 3.2.0 al hacer el maven install -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.1.0</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.2</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>  
+			</plugin>  
 		</plugins>
 	</build>
 
