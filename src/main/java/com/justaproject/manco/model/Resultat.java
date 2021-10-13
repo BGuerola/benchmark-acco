@@ -1,10 +1,10 @@
 package com.justaproject.manco.model;
 
-import java.beans.JavaBean;
+//import java.beans.JavaBean;
 
 import javax.persistence.Entity;
 
-@JavaBean
+//@JavaBean
 public class Resultat {
 	
 	int cifranegociomediadelsector;
