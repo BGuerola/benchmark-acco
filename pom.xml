@@ -82,10 +82,10 @@
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
 		
-<!-- 		<dependency> -->
-<!--     		<groupId>net.sourceforge.nekohtml</groupId> -->
-<!--     		<artifactId>nekohtml</artifactId> -->
-<!-- 		</dependency> -->
+		<dependency>
+    		<groupId>net.sourceforge.nekohtml</groupId>
+    		<artifactId>nekohtml</artifactId>
+		</dependency>
 		
 	</dependencies>
 
