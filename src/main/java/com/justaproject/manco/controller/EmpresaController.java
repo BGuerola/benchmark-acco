@@ -128,7 +128,7 @@ public class EmpresaController {
 				
         //System.out.println(RepositoriCnae.getInstance().cnaeseleccionat(empresa.getCodCNAE()).toString());
         
-        return "/download";
+        return "download";
     }
     
 		@GetMapping("/download")
